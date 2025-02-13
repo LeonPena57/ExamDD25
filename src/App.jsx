@@ -42,6 +42,8 @@ export default function App() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            {/* Catch-all route for undefined paths, redirecting to Home */}
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
         
