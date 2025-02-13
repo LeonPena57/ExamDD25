@@ -1,0 +1,15 @@
+.back-button {
+    background-color: transparent;
+    color: #ff4d4d; /* Red color for the arrow */
+    border: none;
+    font-size: 30px; /* Larger size for the arrow */
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    color: #ff3333; /* Darker red on hover */
+  }
+  

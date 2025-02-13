@@ -1,0 +1,49 @@
+.add-recipe-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Expand form horizontally */
+  padding: 20px;
+  gap: 15px;
+}
+
+.add-recipe-form input,
+.add-recipe-form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.add-recipe-form .form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.save-btn:hover {
+  background-color: #0056b3;
+}
+
+.close-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-btn:hover {
+  background-color: darkred;
+}

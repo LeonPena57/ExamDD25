@@ -1,0 +1,91 @@
+/* RecipeDetail.css */
+.recipe-detail-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.recipe-image {
+  width: 40%; /* 40% of the container width */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.recipe-details {
+  width: 55%; /* 55% of the container width */
+  text-align: left;
+}
+
+.recipe-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.recipe-details p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.recipe-details h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.recipe-details ul {
+  list-style-type: disc; /* Black dots for unordered list */
+  padding-left: 20px; /* Adds padding for the list */
+  margin-bottom: 20px;
+}
+
+.recipe-details li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.recipe-details ol {
+  list-style-type: none; /* Completely remove numbering */
+  padding-left: 20px; /* Align with the rest */
+  margin-left: 0; /* Remove left margin */
+}
+
+.recipe-details ol li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.recipe-details ol li::before {
+  content: "•"; /* Custom black bullet for instructions */
+  position: absolute;
+  left: -20px; /* Move it left so it looks aligned */
+  color: black;
+}
+
+.recipe-not-found {
+  font-size: 1.5rem;
+  color: red;
+  padding: 20px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+}

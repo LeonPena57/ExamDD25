@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Home from "./pages/Home.jsx";
+import Recipes from "./pages/Recipes.jsx";
+import RecipeDetail from "./pages/RecipeDetail.jsx";
+import AddRecipeForm from "./components/AddRecipeForm.jsx";
+import Favorites from "./pages/Favorites.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import BackButton from "./components/BackButton.jsx"; // Import the BackButton component
+import Header from "./components/Header.jsx"; // Import Header component
+import Footer from "./components/Footer.jsx"; // Import Footer component
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [userRecipes, setUserRecipes] = useState(
+    JSON.parse(localStorage.getItem("userRecipes")) || []
+  );
+
+  const handleAddRecipe = (newRecipe) => {
+    const updatedRecipes = [...userRecipes, newRecipe];
+    setUserRecipes(updatedRecipes);
+    localStorage.setItem("userRecipes", JSON.stringify(updatedRecipes)); // Save to localStorage
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <div className="app-container">
+        {/* Use the Header component */}
+        <Header />
+        
+        <main>
+          {/* Add BackButton here to make it appear on all pages */}
+          <BackButton />
 
-export default App
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/recipes" element={<Recipes recipes={userRecipes} />} />
+            <Route path="/recipes/:id" element={<RecipeDetail />} />
+            <Route path="/add-recipe" element={<AddRecipeForm onAddRecipe={handleAddRecipe} />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        
+        {/* Use the Footer component */}
+        <Footer />
+      </div>
+    </Router>
+  );
+}
