@@ -1,5 +1,4 @@
-// src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Home from "./pages/Home.jsx";
 import Recipes from "./pages/Recipes.jsx";
@@ -8,10 +7,13 @@ import AddRecipeForm from "./components/AddRecipeForm.jsx";
 import Favorites from "./pages/Favorites.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
-import BackButton from "./components/BackButton.jsx"; // Import the BackButton component
-import Header from "./components/Header.jsx"; // Import Header component
-import Footer from "./components/Footer.jsx"; // Import Footer component
+import BackButton from "./components/BackButton.jsx"; 
+import Header from "./components/Header.jsx"; 
+import Footer from "./components/Footer.jsx"; 
 import "./App.css";
+
+// Check if the app is running on GitHub Pages
+const isGitHubPages = window.location.hostname.includes("github.io");
 
 export default function App() {
   const [userRecipes, setUserRecipes] = useState(
@@ -21,19 +23,18 @@ export default function App() {
   const handleAddRecipe = (newRecipe) => {
     const updatedRecipes = [...userRecipes, newRecipe];
     setUserRecipes(updatedRecipes);
-    localStorage.setItem("userRecipes", JSON.stringify(updatedRecipes)); // Save to localStorage
+    localStorage.setItem("userRecipes", JSON.stringify(updatedRecipes)); 
   };
 
-  return (
-    <Router basename="/ExamDD25">
-      <div className="app-container">
-        {/* Use the Header component */}
-        <Header />
-        
-        <main>
-          {/* Add BackButton here to make it appear on all pages */}
-          <BackButton />
+  // Use HashRouter for GitHub Pages, BrowserRouter for local development
+  const Router = isGitHubPages ? HashRouter : BrowserRouter;
 
+  return (
+    <Router basename="/ExamDD25/">
+      <div className="app-container">
+        <Header />
+        <main>
+          <BackButton />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recipes" element={<Recipes recipes={userRecipes} />} />
@@ -42,12 +43,8 @@ export default function App() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            {/* Catch-all route for undefined paths, redirecting to Home */}
-            <Route path="*" element={<Home />} />
           </Routes>
         </main>
-        
-        {/* Use the Footer component */}
         <Footer />
       </div>
     </Router>
