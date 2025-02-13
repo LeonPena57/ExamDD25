@@ -25,7 +25,7 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/ExamDD25">
       <div className="app-container">
         {/* Use the Header component */}
         <Header />
