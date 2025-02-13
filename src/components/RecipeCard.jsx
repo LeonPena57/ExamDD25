@@ -38,20 +38,22 @@ export default function RecipeCard({ recipe, setEditingRecipe, isCustom, deleteR
 
       {/* Favorite Button */}
       <button
-        onClick={handleFavorite}
-        style={{
-          position: "absolute",
-          top: "10px",
-          right: "10px",
-          background: "none",
-          border: "none",
-          fontSize: "20px",
-          color: isFavorite ? "#FFD700" : "#ccc",
-          cursor: "pointer",
-        }}
-      >
-        ★
-      </button>
+  onClick={handleFavorite}
+  style={{
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    background: "none",
+    border: "none",
+    fontSize: "34px", // Same size always
+    color: isFavorite ? "#FFD700" : "#888", // Darker grey when not clicked
+    cursor: "pointer",
+    transition: "color 0.2s ease",
+  }}
+>
+  ★
+</button>
+
 
       {/* Conditionally Render Edit Button for Custom Recipes Only */}
       {isCustom && (
@@ -86,7 +88,7 @@ export default function RecipeCard({ recipe, setEditingRecipe, isCustom, deleteR
               cursor: "pointer",
             }}
           >
-            ✖
+            ❌
           </button>
         </>
       )}

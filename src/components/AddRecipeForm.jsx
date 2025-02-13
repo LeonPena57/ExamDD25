@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "/src/AddRecipeForm.css/"
 
 export default function AddRecipeForm({ addRecipe, editRecipe, editingRecipe, handleCloseForm }) {
   const [title, setTitle] = useState("");
@@ -82,7 +81,7 @@ export default function AddRecipeForm({ addRecipe, editRecipe, editingRecipe, ha
           {editingRecipe ? "Save Changes" : "Add Recipe"}
         </button>
         <button type="button" className="close-btn" onClick={handleCloseForm}>
-          X
+        ❌
         </button>
       </div>
     </form>

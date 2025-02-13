@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "/src/Favorites.css"; // Import the Favorites.css
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState([]);
@@ -16,38 +17,24 @@ export default function Favorites() {
   };
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
+    <div className="favorites-container">
       <h2>My Favorite Recipes</h2>
       {favorites.length === 0 ? (
         <p>No favorite recipes added yet!</p>
       ) : (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>
+        <div className="favorites-grid">
           {favorites.map((fav) => (
-            <div key={fav.id} style={{
-              position: "relative",
-              border: "1px solid #ddd",
-              borderRadius: "10px",
-              padding: "15px",
-              textAlign: "center",
-              backgroundColor: "#fafafa"
-            }}>
-              <img src={fav.image} alt={fav.title} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "10px" }} />
+            <div key={fav.id} className="favorites-card">
+              <img src={fav.image} alt={fav.title} className="favorites-image" />
               <h3>{fav.title}</h3>
-              <Link to={`/recipes/${fav.id}`} style={{ textDecoration: "none", color: "#007bff", fontWeight: "bold" }}>View Recipe</Link>
+              <Link to={`/recipes/${fav.id}`} className="favorites-link">
+                View Recipe
+              </Link>
 
               {/* Remove Favorite Button */}
-              <button 
+              <button
                 onClick={() => removeFavorite(fav.id)}
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  background: "none",
-                  border: "none",
-                  fontSize: "20px",
-                  color: "#e74c3c",
-                  cursor: "pointer"
-                }}
+                className="remove-favorite-btn"
               >
                 ❌
               </button>

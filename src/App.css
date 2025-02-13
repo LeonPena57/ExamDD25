@@ -6,13 +6,14 @@
 }
 
 body, html {
-  font-family: 'Georgia', serif; /* Classic serif for a cozy, elegant feel */
+  font-family: 'Georgia', serif;
   height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the whole page height is utilized */
-  background-color: #f9f4f0; /* Light cream background for warmth */
-  color: #4e3b31; /* Dark brown text for legibility */
+  min-height: 100vh;
+  background-color: #f3e5d8; /* Soft warm beige for a cozy café feel */
+  color: #4e3b31; /* Rich coffee brown */
+  padding-top: 50px;  /* Ensure enough room for header */
 }
 
 /* App container - Flex column for sticky header and footer */
@@ -22,199 +23,25 @@ body, html {
   flex-grow: 1; /* Ensure it takes all remaining space */
 }
 
-/* Header Styles */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #7f5f3b; /* Rich coffee brown background */
-  color: white;
-  padding: 20px 40px;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-}
-
-.header h1 {
-  font-size: 32px;
-  font-family: 'Merriweather', serif; /* Elegant serif for the site title */
-  letter-spacing: 1px;
-}
-
-.header nav {
-  display: flex;
-  gap: 25px;
-}
-
-.header nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.header nav a:hover {
-  text-decoration: underline;
-  color: #f1c40f; /* Mustard yellow accent on hover */
-}
-
-/* Main Content Styles */
+/* Global Main Content */
 .main-content {
-  flex: 1; /* Allow main content to grow and take up remaining space */
-  padding: 40px 60px;
-  margin-top: 100px; /* Offset for the fixed header */
-  overflow-y: auto; /* Ensures it scrolls when the content exceeds the available space */
-  background-color: #fff; /* Light background for content */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #7f5f3b; /* Matching coffee brown */
-  color: white;
-  text-align: center;
-  padding: 20px 40px;
-  font-size: 14px;
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  letter-spacing: 0.5px;
-}
-
-.footer p {
-  margin: 0;
-  font-family: 'Merriweather', serif;
-}
-
-/* Buttons */
-button {
-  padding: 12px 20px;
-  background-color: #f1c40f; /* Mustard yellow */
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #d49e11; /* Darker yellow on hover */
-}
-
-/* Form Inputs */
-input, textarea {
-  padding: 12px;
-  border: 2px solid #7f5f3b; /* Coffee brown border */
-  border-radius: 8px;
-  margin-bottom: 20px;
-  width: 100%;
-  font-size: 16px;
-}
-
-/* Search Bar */
-.search-bar {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #7f5f3b;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-
-/* Recipe Cards */
-.recipe-card {
-  background-color: #fff;
-  border: 2px solid #f4e1c1; /* Soft, warm cream border */
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.recipe-card:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+  flex: 1;
+  padding: 50px 70px;
+  margin-top: 120px; /* Ensure enough space for header */
+  overflow-y: auto;
+  background-color: #fffaf1; /* Light creamy background */
+  border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Remove Recipe Button */
-.remove-recipe-btn {
-  background-color: transparent;
-  border: none;
-  color: #e74c3c; /* Red for delete */
-  font-size: 18px;
-  cursor: pointer;
-  padding: 5px;
-  transition: color 0.3s ease;
-}
-
-.remove-recipe-btn:hover {
-  color: #c0392b; /* Darker red */
-}
-
-/* Back Button Styling */
-.back-button {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: #7f5f3b; /* Rich brown */
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #5d4037; /* Slightly darker brown */
-}
-
-/* Add Recipe Button */
-.add-recipe-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: #f1c40f; /* Mustard yellow */
-  color: white;
-  font-size: 32px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.add-recipe-btn:hover {
-  background-color: #d49e11;
-}
-
-.plus-icon {
-  font-size: 32px;
-}
-
-.add-recipe-btn .plus-icon.show-x {
-  font-size: 24px; /* Smaller for the X sign */
+/* For other pages or sections */
+.page-content {
+  margin-top: 20px;
 }
 
 /* Responsive Design */
@@ -225,20 +52,11 @@ input, textarea {
   }
 
   .header h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .main-content {
-    padding: 20px 25px;
-    margin-top: 110px; /* Ensure content is offset correctly for smaller screens */
-  }
-
-  .footer {
-    padding: 15px 25px;
-    font-size: 12px;
-  }
-
-  .recipe-card {
-    padding: 15px;
+    padding: 30px 35px;
+    margin-top: 140px;
   }
 }

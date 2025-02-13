@@ -1,18 +1,19 @@
 /* src/components/Footer.css */
 .footer {
-    background-color: #7f5f3b;
-    color: white;
-    text-align: center;
-    padding: 20px 40px;
-    font-size: 14px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    letter-spacing: 0.5px;
-  }
-  
-  .footer p {
-    margin: 0;
-    font-family: 'Merriweather', serif;
-  }
-  
+  background-color: #4e3b31;
+  color: white;
+  text-align: center;
+  padding: 20px 40px;
+  font-size: 14px;
+  width: 100%;
+  position: relative; /* Keep relative if you want it to stay at the bottom */
+  margin-top: 50px; /* Add some margin if the footer is too close to other elements */
+  letter-spacing: 0.5px;
+  z-index: 500; /* Ensure it's below fixed buttons */
+}
+
+.footer p {
+  margin: 0;
+  color: white;
+  font-family: 'Merriweather', serif;
+}

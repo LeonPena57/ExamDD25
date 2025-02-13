@@ -1,0 +1,44 @@
+/* Contact Page Styles */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    background-color: #fffaf1; /* Warm creamy background */
+    border-radius: 12px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .contact-container h2 {
+    font-size: 26px;
+    color: #7b4f3f; /* Rich mocha brown */
+    margin-bottom: 20px;
+  }
+  
+  .contact-info {
+    font-size: 18px;
+    color: #4e3b31; /* Coffee brown */
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .contact-info strong {
+    color: #a67c52; /* Toasted caramel */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      max-width: 90%;
+      padding: 20px;
+    }
+  
+    .contact-container h2 {
+      font-size: 22px;
+    }
+  
+    .contact-info {
+      font-size: 16px;
+    }
+  }
+  

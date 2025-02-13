@@ -1,0 +1,29 @@
+/* Back Button Styling */
+.back-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  left: 20px;   /* Distance from the left */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #c49a6c;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Ensure the button is above other content */
+}
+
+.back-button:hover {
+  color: #ff3333; /* Darker red on hover */
+}
+
+/* Ensuring the buttons are above the footer */
+.back-button, .add-recipe-btn {
+  position: fixed;
+  z-index: 1000; /* Make sure buttons are above other elements */
+}

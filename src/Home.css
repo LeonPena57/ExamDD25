@@ -1,0 +1,64 @@
+/* Home Page Styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 70px;
+  background-color: #fef6eedd; /* Warm beige coffee-like background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 120px; /* Account for fixed header */
+  font-family: 'Georgia', serif;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-container h2 {
+  font-size: 40px;
+  font-family: 'Merriweather', serif; /* Elegant serif for headings */
+  color: #5a3e2b; /* Deep coffee brown */
+  margin-bottom: 20px;
+  border-bottom: 3px solid #c49a6c; /* Light brown underline */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.home-container p {
+  font-size: 22px;
+  color: #4e3b31; /* Dark brown text for readability */
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.home-container .highlight {
+  font-weight: bold;
+  color: #a67c52; /* Toasted caramel color */
+}
+
+.home-container .cta-button {
+  padding: 14px 30px;
+  background-color: #7b4f3f; /* Rich coffee brown */
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-container .cta-button:hover {
+  background-color: #5e3827; /* Darker coffee brown */
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+.home-container {
+  margin-top: 5px;
+}
+}

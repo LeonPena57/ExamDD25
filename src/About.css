@@ -1,0 +1,57 @@
+/* About Page Styles */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 70px;
+    background-color: #fef6eedd; /* Warm beige coffee-like background */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Georgia', serif;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.about-container h2 {
+    font-size: 38px;
+    font-family: 'Merriweather', serif; /* Elegant serif for headings */
+    color: #5a3e2b; /* Deep coffee brown */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #c49a6c; /* Light brown underline */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.about-container p {
+    font-size: 20px;
+    color: #4e3b31; /* Dark brown text for readability */
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.about-container .highlight {
+    font-weight: bold;
+    color: #a67c52; /* Toasted caramel color */
+}
+
+.about-container .cta-button {
+    padding: 14px 30px;
+    background-color: #7b4f3f; /* Rich coffee brown */
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-container .cta-button:hover {
+    background-color: #5e3827; /* Darker coffee brown */
+    transform: scale(1.05);
+}
