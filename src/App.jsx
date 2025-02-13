@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Home from "./pages/Home.jsx";
 import Recipes from "./pages/Recipes.jsx";
@@ -12,9 +12,6 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx"; 
 import "./App.css";
 
-// Check if the app is running on GitHub Pages
-const isGitHubPages = window.location.hostname.includes("github.io");
-
 export default function App() {
   const [userRecipes, setUserRecipes] = useState(
     JSON.parse(localStorage.getItem("userRecipes")) || []
@@ -26,11 +23,8 @@ export default function App() {
     localStorage.setItem("userRecipes", JSON.stringify(updatedRecipes)); 
   };
 
-  // Use HashRouter for GitHub Pages, BrowserRouter for local development
-  const Router = isGitHubPages ? HashRouter : BrowserRouter;
-
   return (
-    <Router basename="/ExamDD25/">
+    <Router>
       <div className="app-container">
         <Header />
         <main>
